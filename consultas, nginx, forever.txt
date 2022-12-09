@@ -1,0 +1,30 @@
++ Ejecutar el servidor (modos FORK y CLUSTER) con nodemon verificando el número de procesos tomados por node.
+
+nodemon src/server.js --p 8080 --m FORK
+nodemon src/server.js --p 8080 --m CLUSTER
+
++ Ejecutar el servidor (con los parámetros adecuados) utilizando Forever, verificando su correcta operación. Listar los procesos por Forever y por sistema operativo.
+
+forever start src/server.js --p 8080 --m FORK
+forever start src/server.js --p 8080 --m CLUSTER
+forever list
+tasklist /fi 
+
++ Ejecutar el servidor (con los parámetros adecuados: modo FORK) utilizando PM2 en sus modos modo fork y cluster. Listar los procesos por PM2 y por sistema operativo.
+
+pm2 start src/server.js --name serverFork
+pm2 start src/server.js --name serverCluster -i max
+pm2 list
+tasklist /fi
+
++ Tanto en Forever como en PM2 permitir el modo escucha, para que la actualización del código del servidor se vea reflejado inmediatamente en todos los procesos.
+
+forever start src/server.js --p 8080 --m FORK --watch
+forever start src/server.js --p 8080 --m CLUSTER --watch
+pm2 start src/server.js --name serverFork --watch
+pm2 start src/server.js --name serverCluster --watch -i max
+
++ Hacer pruebas de finalización de procesos fork y cluster en los casos que corresponda.
+
+pm2 delete all
+forever stopall

@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js --p 8080 --m CLUSTER"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuzmaGrey/servidor"
+  },
+  "bugs": {
+    "url": "https://github.com/LuzmaGrey/servidor"
+  },
+  "homepage": "https://github.com/LuzmaGrey/servidor",
+  "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "moment": "^2.29.4",
+    "mongoose": "^6.8.0",
+    "normalizr": "^3.6.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.5.4",
+    "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
